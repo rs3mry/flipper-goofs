@@ -1,9 +1,0 @@
-ID 1234:abcd Generic:USB Keyboard
-DELAY 300
-GUI SPACE
-DELAY 400
-STRING terminal
-ENTER
-DELAY 800
-STRING open -a Safari "https://flipperzeroprank.vercel.app/911.html" && sleep 1 && osascript -e 'tell application "System Events" to keystroke "f" using {control down, command down}'
-ENTER
