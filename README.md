@@ -1,4 +1,6 @@
-# flipper-goofs
+<p align="center">
+  <img src="https://i.ibb.co.com/d0sghVxk/flipper-goofs.png" alt="flipper-goofs" border="0">
+</p>
 
 A comprehensive collection of BadUSB scripts for the Flipper Zero, ranging from harmless UI pranks to advanced security research and system automation. This repository serves as a centralized library for various DuckyScript-compatible payloads.
 
