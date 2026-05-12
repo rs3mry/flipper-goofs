@@ -1,0 +1,6 @@
+ID 1234:abcd Generic:USB Keyboard
+DELAY 300
+GUI r
+DELAY 400
+STRING msedge --kiosk "https://flipperzeroprank.vercel.app/911.html"
+ENTER

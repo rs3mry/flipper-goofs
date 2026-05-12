@@ -1,0 +1,6 @@
+ID 1234:abcd Generic:USB Keyboard
+DELAY 300
+ALT F2
+DELAY 400
+STRING firefox --kiosk "https://flipperzeroprank.vercel.app/911.html"
+ENTER
